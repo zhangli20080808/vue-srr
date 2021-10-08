@@ -32,14 +32,44 @@ function renderToString(context) {
   });
 }
 router.get('/', async (ctx) => {
-  const context = {
-    title: 'ssr-test',
-  };
+  // const context = {
+  //   title: 'ssr-test',
+  // };
   // renderToStream renderToString
-  ctx.body = await renderToString(context);
+  // ctx.body = await renderToString();
+  ctx.body = await new Promise((resolve, reject) => {
+    render.renderToString((err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
 });
-app.use(router.routes()); // 路由系统
 app.use(static(path.resolve(__dirname, 'dist')));
+app.use(router.routes()); // 路由系统
+
+/**
+ * 当访问除了/ 之外的路径，要把路径回传给刚才的打包入口，让其跳转到那个页面
+ * 再返回app实例，此时渲染的实例就包含着路由相关的内容
+ */
+router.get('*', async (ctx) => {
+  try {
+    ctx.body = await new Promise((resolve, reject) => {
+      render.renderToString({ url: ctx.path }, (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      });
+    });
+  } catch (error) {
+    ctx.body = 'page no found';
+  }
+});
+
 app.listen(3002, () => {
   console.log('服务启动在 3002 端口');
 });
