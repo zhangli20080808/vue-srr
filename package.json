@@ -1,0 +1,28 @@
+{
+  "name": "vue-srr",
+  "version": "1.0.0",
+  "description": "vue-srr相关实现，理论学习 ## 服务端渲染 ssr  * 浏览器里进行渲染，服务端渲染，在服务端将对应的数据请求完，在后端拼接好也页面，返回给前端   * 客户端渲染不利于seo优化，服务端渲染的结果可以被浏览器抓取到  * ssr的缺陷就是占用大量的cpu和内存  * 客户端渲染可能会出现白屏，通过ssr，可以减少白屏事件  * Api不能用，只支持 beforeCreate created 等生命周期，因为dom概念",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangli20080808/vue-srr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangli20080808/vue-srr/issues"
+  },
+  "homepage": "https://github.com/zhangli20080808/vue-srr#readme",
+  "dependencies": {
+    "koa": "^2.13.3",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vue-server-renderer": "^2.6.14"
+  }
+}
