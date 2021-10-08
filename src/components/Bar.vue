@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class="bar">
     bar
   </div>
 </template>
 <script></script>
-<style scoped></style>
+<style scoped>
+.bar {
+  background: red;
+}
+</style>

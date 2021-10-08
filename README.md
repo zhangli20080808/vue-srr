@@ -27,3 +27,9 @@ vue-srr 相关实现，理论学习
 - style-loader 不支持 ssr, vue-style-loader(vue 中解析样式，插入到页面中) css-loader
 - vue-loader、vue-template-compiler,将模板转化成 render 函数
 - html-webpack-plugin
+- webpack-merge
+
+## 打包两份的区别和原因
+
+1. 客户端打包出来的是 js ，客户端代码，正常开发流程
+2. 服务端渲染使用 - 服务端打包渲染出来的是一个字符串，字符串返回给客户端是 html 字符串，字符串不具备功能，所以我们需要将客户端打包好的 js 挂载到这个 html 中，就具备了 js 的逻辑。

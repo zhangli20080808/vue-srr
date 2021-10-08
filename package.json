@@ -4,8 +4,9 @@
   "description": "vue-srr相关实现，理论学习 ## 服务端渲染 ssr  * 浏览器里进行渲染，服务端渲染，在服务端将对应的数据请求完，在后端拼接好也页面，返回给前端   * 客户端渲染不利于seo优化，服务端渲染的结果可以被浏览器抓取到  * ssr的缺陷就是占用大量的cpu和内存  * 客户端渲染可能会出现白屏，通过ssr，可以减少白屏事件  * Api不能用，只支持 beforeCreate created 等生命周期，因为dom概念",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack"
+    "client:dev": "webpack-dev-server --config ./build/webpack.client.js",
+    "client:build": "webpack --config ./build/webpack.client.js",
+    "server:build": "webpack --config ./build/webpack.server.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.58.0",
     "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0"
   }
 }
