@@ -1,6 +1,6 @@
 <template>
   <div class="foo">
-    foo
+    foo21312
     <button @click="show()">点击</button>
   </div>
 </template>
@@ -15,6 +15,6 @@ export default {
 </script>
 <style scoped>
 .foo {
-  background: red;
+  background: yellow;
 }
 </style>
