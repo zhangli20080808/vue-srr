@@ -10,3 +10,6 @@ vue-srr相关实现，理论学习
 ## 安装依赖
 1. npm install vue vue-router vue-server-renderer(vue服务端渲染插件) --save
 2. npm install koa koa-router koa-static
+
+## 参考文档 
+[ssr](https://ssr.vuejs.org/zh/guide/#%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E6%A8%A1%E6%9D%BF)
